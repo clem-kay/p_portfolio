@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $message = htmlspecialchars($_POST['message']);
 
-    $to = "pearlfamous@gmail.com";  // Change this to your email
+    $to = "ckoomson75@gmail.com";  // Change this to your email
     $subject = "New Contact Form Submission from $firstname";
     $body = "You have received a new message.\n\n".
             "Name: $firstname\n".

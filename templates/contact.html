@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<section aria-label="Contact form" id="contact">
+  <div class="container">
+    <article>
+      <hgroup>
+        <h2>Contact</h2>
+        <h3>Let’s work together</h3>
+      </hgroup>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form class="grid" method="POST">
+        <input type="text" id="firstname" name="firstname" placeholder="First Name" required />
+        <input type="email" id="email" name="email" placeholder="Email" required />
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </article>
+  </div>
+</section>
+{% endblock %}
